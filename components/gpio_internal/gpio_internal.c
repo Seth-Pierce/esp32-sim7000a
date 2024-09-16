@@ -31,6 +31,7 @@ void GPIO_StartDevice(void) {
     }
 
     GPIO_StartCell();
+
 }
 
 void GPIO_StartCell(void) {
@@ -41,14 +42,14 @@ void GPIO_StartCell(void) {
     if (err != ESP_OK) {
         ESP_LOGE(DBG_TAG, "Failed to set level for %d to %d", PWR_KEY, GPIO_HIGH);
     }
-    vTaskDelay(pdMS_TO_TICKS(3000));
+    vTaskDelay(pdMS_TO_TICKS(1000));
 
     ESP_LOGV(DBG_TAG, "Toggling PWR_KEY LOW");
     err = gpio_set_level(PWR_KEY, GPIO_LOW);
     if (err != ESP_OK) {
         ESP_LOGE(DBG_TAG, "Failed to set level for %d to %d", PWR_KEY, GPIO_LOW);
     }
-    vTaskDelay(pdMS_TO_TICKS(3000));
+    vTaskDelay(pdMS_TO_TICKS(1000));
 
     ESP_LOGV(DBG_TAG, "Toggling PWR_KEY HIGH");
     err = gpio_set_level(PWR_KEY, GPIO_HIGH);

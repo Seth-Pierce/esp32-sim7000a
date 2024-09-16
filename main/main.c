@@ -18,9 +18,9 @@
 
 void app_main(void)
 {
-    // DISP_StartDevice();
-    // DISP_StartAppTask();
-    // GPIO_StartDevice();
+    DISP_StartDevice();
+    DISP_StartAppTask();
+    GPIO_StartDevice();
     UART_StartDevice();
     SIM_StartDevice();
 }
